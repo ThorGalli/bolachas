@@ -18,17 +18,19 @@ public class BallBehaviour : MonoBehaviour {
 
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
+    private Color vanilla;
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         sprite = this.GetComponent<SpriteRenderer>();
+        vanilla = new Color(0.92f, 0.60f, 0.27f, 1);
     }
 
     private void Update() {
         if (rb.velocity.magnitude >= maxSpeed) {
-            sprite.color = Color.red;
+            sprite.color = Color.magenta;
         } else {
-            sprite.color = Color.white;
+            sprite.color = vanilla;
         }
     }
 
