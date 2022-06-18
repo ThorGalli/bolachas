@@ -45,8 +45,9 @@ public class DestructibleBehaviour : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision) {
         DamageDealerBehaviour hitter = collision.gameObject.GetComponent<DamageDealerBehaviour>();
+
         if (hitter != null) {
-            int damage = hitter.GetDamage();
+            int damage = hitter.GetTotalDamage();
             TakeDamage(damage);
         }
     }
